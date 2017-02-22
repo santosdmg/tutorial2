@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html ng-app="snippets">
+    <head>
+        <meta charset="utf-8">
+        <title>HOME</title>
+        <script src="node_modules/angular/angular.js"></script>
+        <script src="node_modules/angular-resource/angular-resource.js"></script>
+        <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css" media="screen" title="no title">
+
+    </head>
+    <body ng-controller="snippetsController">
+        <h1>Lista de Snippets</h1>
+        <div ng-repeat="snippet in snippets track by snippet.id">
+            {{snippet}}
+        </div>
+        <script src="js/app.js"></script>
+        <script src="js/controllers.js"></script>
+        <script src="js/services.js"></script>
+    </body>
+</html>

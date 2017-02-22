@@ -18,4 +18,5 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^', include('snippets.urls')),
+    url(r'^', include('snippets_frontend.urls')),
 ]
