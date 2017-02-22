@@ -1,13 +1,21 @@
 (function() {
     var app = angular.module('snippets', [
-        'ngResource',
+        'ngRoute',
         'snippets.controllers',
         'snippets.services'
 
+
     ]);
 
-    app.config(['$resourceProvider', function($resourceProvider) {
-        $resourceProvider.defaults.stripTrailingSlashes = false;
+    app.config(['$routeProvider', function($routeProvider) {
+        $routeProvider
+        .when('/', {
+            templateUrl: 'index.html',
+            controller: 'snippetsController'
+        })
+        .otherwise({
+            redirectTo: '/'
+        });
     }]);
 
 })();

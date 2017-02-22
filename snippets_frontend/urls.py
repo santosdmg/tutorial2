@@ -5,6 +5,6 @@ urlpatterns = [
     url(r'^$', RedirectView.as_view(url='static/index.html',
                                     permanent=False),
                                     name='index'),
-    
+
 
 ]
