@@ -1,0 +1,19 @@
+<div class="col-lg-3" ng-repeat="snippet in snippets track by snippet.id">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <a href="#!/snippet/{{snippet.id}}">{{snippet.title}}</a>
+        </div>
+        <div class="panel-body  " >
+            <label class="hyphenation">{{snippet.code}}</label>
+        </div>
+        <div class="panel-footer text-center">
+            <b> By:</b>  {{snippet.owner}}
+            <br>
+            <a href="#">
+                <span class="label label-primary">
+                    {{snippet.language}}
+                </span>
+            </a>
+        </div>
+    </div>
+</div>

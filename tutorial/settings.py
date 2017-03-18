@@ -39,12 +39,29 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'snippets.apps.SnippetsConfig',
+    'corsheaders', #libreria permisos para el frontend
     'snippets_frontend',
 ]
 
-#paginations
+#lista de servidores con permiso para acceder a django
+CORS_ORIGIN_WHITELIST = (
+    'localhost:9000',
+    '0.0.0.1:9000'
+)
+#lista de metodos a permitit del frontend
+CORS_ALLOW_METHODS = (
+    'DELETE',
+    'GET',
+    'OPTIONS',
+    'PATCH',
+    'POST',
+    'PUT',
+)
+
 REST_FRAMEWORK = {
-    'PAGE_SIZE': 10
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.AllowAny',
+    ),
 }
 
 MIDDLEWARE = [
@@ -55,6 +72,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    #permisos para el frontend
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
 
 ROOT_URLCONF = 'tutorial.urls'
@@ -62,7 +82,7 @@ ROOT_URLCONF = 'tutorial.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [], #BASE_DIR, 'snippets_frontend'
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -124,5 +144,8 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
-
+#STATICFILES_DIRS = [
+#    BASE_DIR, 'snippets_frontend'
+#]
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')

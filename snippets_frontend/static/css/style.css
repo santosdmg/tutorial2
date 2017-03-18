@@ -1,0 +1,31 @@
+.hyphenation {
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+        hyphens: auto;
+}
+.text-justified {
+    text-align: justify;
+}
+.panel-heading a {
+    color: #fff;
+}
+.panel-body{
+    overflow: scroll;
+    height: 55%;
+    background-color: #fff;
+}
+.panel{
+    overflow: hidden;
+    height: 280px;
+}
+.panel-footer{
+    height: 30%;
+
+}
+.body-detSnippet{
+    margin-top: 80px;
+}
+#snippetTit{
+    width: 60%;
+}

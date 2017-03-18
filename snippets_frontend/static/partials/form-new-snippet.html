@@ -1,0 +1,35 @@
+<div class="well tab-content">
+    <form method="post" role="form" ng-submit="addNewSnippet()" novalidate>
+        <div class="form-group">
+            <label>Titulo</label>
+            <input id="snippetTit" ng-model="nSnippet.title" type="text" class="form-control" placeholder="Ingrese titulo" autofocus="" required>
+        </div>
+        <div class="form-group">
+            <label>Codigo</label>
+            <textarea ng-model="nSnippet.code" class="form-control" rows="5" required></textarea>
+        </div>
+        <div class="form-group">
+            <label>Linenos </label>
+            <input ng-model="nSnippet.linenos" type="checkbox" value="">
+        </div>
+        <div class="form-group">
+            <label>Lenguaje </label>
+            <select ng-model="nSnippet.languaje" id="snippetLeng" class="form-control" required>
+                <option>python</option>
+                <option>php</option>
+                <option>javascript</option>
+                <option>c#</option>
+                <option>c++</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Estilo </label>
+            <select ng-model="nSnippet.style" id="snippetStyl" class="form-control" required>
+                <option>native</option>
+                <option>emacs</option>
+                <option>default</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+    </form>
+</div>
